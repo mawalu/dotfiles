@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/martin/Dokumente/programme/node.js/hubot-eve/scripts'
+let g:netrw_dirhist_2='/home/martin/Documents/programme/vagrant/base/vagrant'
+let g:netrw_dirhist_3='/usr/bin'
+let g:netrw_dirhist_4='/home/martin/.vim/bundle/Vundle.vim'
