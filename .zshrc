@@ -1,6 +1,6 @@
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="kafeitu"
+ZSH_THEME="gianu"
 
 plugins=(git, archlinux, npm, node, jsontools, sudo, vagrant, wd)
 
