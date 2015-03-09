@@ -13,6 +13,10 @@ set smarttab
 set expandtab
 set nowrap
 
+" encodig
+set encoding=utf-8
+set fileencoding=utf-8
+
 " color scheme
 "set background=dark
 let g:hybrid_use_Xresources = 1
