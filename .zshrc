@@ -13,3 +13,7 @@ alias t='todo.sh'
 function myIp() {
     curl http://wtfismyip.com/text
 }
+
+function webServer() {
+    python -m http.server $1
+}
