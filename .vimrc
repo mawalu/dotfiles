@@ -6,9 +6,9 @@ set history=500
 set ruler
 set number
 
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set smarttab
 set expandtab
 set nowrap
@@ -35,18 +35,3 @@ imap <right> <nop>
 " save as root
 cmap w!! w !sudo tee > /dev/null %
 
-" plugins
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
-
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'bling/vim-airline'
-
-call vundle#end()
-
-" airline
-set laststatus=2
-let g:airline#extensions#tabline#enabled = 1

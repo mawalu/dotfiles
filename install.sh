@@ -1,5 +1,6 @@
 #!/bin/sh
-INSTALL=(.vim .vimrc .zshrc .tmuxinator .oh-my-zsh)
+INSTALL=(.vim .vimrc .zshrc .tmuxinator)
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 for i in ${INSTALL[*]} ; do
     ln -s "$(pwd)/$i" $HOME
 done
