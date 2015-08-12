@@ -9,6 +9,7 @@ export EDITOR=vim
 source $ZSH/oh-my-zsh.sh
 
 alias t='todo.sh'
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 function myIp() {
     curl http://wtfismyip.com/text
