@@ -40,3 +40,5 @@ function extract () {
     fi  
 }
 
+
+source $HOME/.zshrc.local
