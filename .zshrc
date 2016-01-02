@@ -2,7 +2,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="gianu"
 
-plugins=(git, archlinux, npm, node, jsontools, sudo, vagrant, wd, thefuck)
+plugins=(git, archlinux, npm, node, jsontools, sudo, vagrant, thefuck, wd)
 
 export PATH=$HOME/node_modules/bin:$HOME/bin:$HOME/.composer/vendor/bin:/usr/lib/node_modules:$HOME/.gem/ruby/2.2.0/bin:/opt/android-sdk/tools/:/opt/android-sdk/platform-tools/:$PATH
 export EDITOR=vim
@@ -42,3 +42,6 @@ function extract () {
 
 
 source $HOME/.zshrc.local
+
+zstyle ':completion:*' special-dirs true
+
