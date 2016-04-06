@@ -2,9 +2,10 @@ export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="gianu"
 
-plugins=(git, archlinux, npm, node, jsontools, sudo, vagrant, thefuck, wd)
+plugins=(git archlinux npm node jsontools sudo vagrant thefuck wd)
 
-export PATH=$HOME/node_modules/bin:$HOME/bin:$HOME/.composer/vendor/bin:/usr/lib/node_modules:$HOME/.gem/ruby/2.2.0/bin:/opt/android-sdk/tools/:/opt/android-sdk/platform-tools/:$PATH
+export GOPATH=$HOME/Documents/programme/go
+export PATH=$GOPATH/bin:$HOME/node_modules/bin:$HOME/bin:$HOME/.composer/vendor/bin:/usr/lib/node_modules:$HOME/.gem/ruby/2.3.0/bin:/opt/android-sdk/tools/:/opt/android-sdk/platform-tools/:$PATH
 export EDITOR=vim
 source $ZSH/oh-my-zsh.sh
 
