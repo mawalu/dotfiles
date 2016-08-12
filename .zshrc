@@ -2,7 +2,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="gianu"
 
-plugins=(git archlinux npm node jsontools sudo vagrant thefuck wd)
+plugins=(git archlinux npm node jsontools sudo vagrant wd urltools)
 
 export GOPATH=$HOME/Documents/programme/go
 export PATH=$GOPATH/bin:$HOME/node_modules/bin:$HOME/bin:$HOME/.composer/vendor/bin:/usr/lib/node_modules:$HOME/.gem/ruby/2.3.0/bin:/opt/android-sdk/tools/:/opt/android-sdk/platform-tools/:$PATH
@@ -12,12 +12,27 @@ source $ZSH/oh-my-zsh.sh
 alias t='todo.sh'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
-function myIp() {
-    curl http://wtfismyip.com/text
+alias setclip='xclip -selection c'
+alias getclip='xclip -selection clipboard -o'
+
+function gui() {
+  if [ $# -gt 0 ] ; then
+    ($@ &) &>/dev/null
+  else
+    echo "missing argument"
+  fi
 }
 
-function webServer() {
-    python -m http.server $1
+function open() {
+  gui gnome-open $@
+}
+
+function sha-hash() {
+  read -s INPUT
+  HASH=$(echo $INPUT | tr -d '\n' | sha256sum | awk '{print toupper($0)}')
+  HASH=${HASH:0:8}
+  echo $HASH
+  echo -n $HASH | setclip
 }
 
 function extract () {
@@ -40,7 +55,6 @@ function extract () {
         echo "'$1' is not a valid file"
     fi  
 }
-
 
 source $HOME/.zshrc.local
 
