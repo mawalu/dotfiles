@@ -14,6 +14,7 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 
 alias setclip='xclip -selection c'
 alias getclip='xclip -selection clipboard -o'
+alias phpunit='./vendor/bin/phpunit'
 
 function gui() {
   if [ $# -gt 0 ] ; then
