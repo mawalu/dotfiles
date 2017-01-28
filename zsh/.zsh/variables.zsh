@@ -3,4 +3,3 @@ export PATH=$GOPATH/bin:$HOME/node_modules/bin:$HOME/bin:$HOME/.composer/vendor/
 export EDITOR=vim
 export ZSH=$HOME/.oh-my-zsh
 
-

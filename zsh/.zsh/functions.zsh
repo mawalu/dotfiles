@@ -7,7 +7,7 @@ function gui() {
 }
 
 function open() {
-  gui gnome-open $@
+  xdg-open $@
 }
 
 function sha-hash() {
