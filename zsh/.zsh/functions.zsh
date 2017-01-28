@@ -1,21 +1,3 @@
-export ZSH=$HOME/.oh-my-zsh
-
-ZSH_THEME="gianu"
-
-plugins=(git archlinux npm node jsontools sudo vagrant wd urltools)
-
-export GOPATH=$HOME/Documents/programme/go
-export PATH=$GOPATH/bin:$HOME/node_modules/bin:$HOME/bin:$HOME/.composer/vendor/bin:/usr/lib/node_modules:$HOME/.gem/ruby/2.3.0/bin:/opt/android-sdk/tools/:/opt/android-sdk/platform-tools/:$PATH
-export EDITOR=vim
-source $ZSH/oh-my-zsh.sh
-
-alias t='todo.sh'
-alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-
-alias setclip='xclip -selection c'
-alias getclip='xclip -selection clipboard -o'
-alias phpunit='./vendor/bin/phpunit'
-
 function gui() {
   if [ $# -gt 0 ] ; then
     ($@ &) &>/dev/null
@@ -56,8 +38,3 @@ function extract () {
         echo "'$1' is not a valid file"
     fi  
 }
-
-source $HOME/.zshrc.local
-
-zstyle ':completion:*' special-dirs true
-

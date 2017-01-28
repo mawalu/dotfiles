@@ -13,6 +13,10 @@ set smarttab
 set expandtab
 set nowrap
 
+" disable backup and swap files
+set nobackup
+set noswapfile
+
 " encodig
 set encoding=utf-8
 set fileencoding=utf-8
@@ -34,4 +38,12 @@ imap <right> <nop>
 
 " save as root
 cmap w!! w !sudo tee > /dev/null %
+
+" plugins
+call plug#begin('~/.plugged')
+
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'Valloric/YouCompleteMe'
+
+call plug#end()
 
