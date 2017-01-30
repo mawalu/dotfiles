@@ -1,13 +1,13 @@
 zstyle ':completion:*' special-dirs true
 
 # includes
-source .zsh/variables.zsh
-source .zsh/functions.zsh
-source .zsh/aliases.zsh
+source ~/.zsh/variables.zsh
+source ~/.zsh/functions.zsh
+source ~/.zsh/aliases.zsh
 
 # use gpg-agent for ssh
 if [[ -a ~/.use-yubikey ]]; then
-	source .zsh/yubikey.zsh
+	source ~/.zsh/yubikey.zsh
 fi
 
 # oh-my-zsh
