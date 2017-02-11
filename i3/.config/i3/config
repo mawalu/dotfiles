@@ -10,8 +10,8 @@ font pango:monospace 8
 
 # Settings for i3-gaps
 for_window [class="^.*"] border pixel 1
-gaps inner 30
-gaps outer 0
+#gaps inner 30
+#gaps outer 0
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

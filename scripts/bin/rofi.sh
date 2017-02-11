@@ -1,2 +1,2 @@
 #!/bin/sh
-rofi -combi-modi window,drun -monitor DVI-I-1 -show combi -modi combi
+rofi -combi-modi window,drun -show combi -modi combi
