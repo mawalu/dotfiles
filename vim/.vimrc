@@ -44,6 +44,7 @@ call plug#begin('~/.plugged')
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Valloric/YouCompleteMe'
+Plug 'posva/vim-vue'
 
 call plug#end()
 
