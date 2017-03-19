@@ -41,7 +41,7 @@ URxvt.externalBorder:      0
 
 URxvt.transparent:   true
 URxvt.tintColor:     white
-URxvt.shading:       15
+URxvt.shading:       20
 
 URxvt.scrollBar: false
 

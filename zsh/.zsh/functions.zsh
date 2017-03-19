@@ -38,3 +38,7 @@ function extract () {
         echo "'$1' is not a valid file"
     fi  
 }
+
+function yt() {
+   youtube-dl -q -o - "$1" | mpv -
+}

@@ -14,3 +14,4 @@ alias p='clear && phpunit'
 # other
 alias tailf='tail -f'
 alias twitter='turses'
+alias qr='qrencode -o - -t asciii'
