@@ -1,0 +1,104 @@
+[bar/top]
+monitor = ${env:MONITOR:DVI-I-1}
+width = 100%
+height = 20
+
+background = #aa000000
+foreground = #ccffffff
+
+line-size = 20
+
+padding = 5
+module-margin = 3
+
+font-0 = NotoSans-Regular:size=8;0
+font-1 = MaterialIcons:size=10;0
+font-2 = Termsynu:size=8:antialias=false;0
+font-3 = FontAwesome:size=10;1
+
+modules-left = volume current-song
+modules-right = hostname wired-network date
+
+[module/cpu]
+type = internal/cpu
+format = <label> <ramp-coreload>
+label = CPU
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 2
+ramp-coreload-0-foreground = #aaff77
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 2
+ramp-coreload-1-foreground = #aaff77
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 2
+ramp-coreload-2-foreground = #aaff77
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 2
+ramp-coreload-3-foreground = #aaff77
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 2
+ramp-coreload-4-foreground = #fba922
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 2
+ramp-coreload-5-foreground = #fba922
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 2
+ramp-coreload-6-foreground = #ff5555
+ramp-coreload-7 = █
+ramp-coreload-7-font = 2
+ramp-coreload-7-foreground = #ff5555
+
+[module/date]
+type = internal/date
+date = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M:%S%%{F-}
+
+[module/memory]
+type = internal/memory
+format = <label> <bar-used>
+label = RAM
+
+bar-used-width = 30
+bar-used-foreground-0 = #aaff77
+bar-used-foreground-1 = #aaff77
+bar-used-foreground-2 = #fba922
+bar-used-foreground-3 = #ff5555
+bar-used-indicator = |
+bar-used-indicator-font = 6
+bar-used-indicator-foreground = #ff
+bar-used-fill = ─
+bar-used-fill-font = 6
+bar-used-empty = ─
+bar-used-empty-font = 6
+bar-used-empty-foreground = #444444
+
+[module/wired-network]
+type = internal/network
+interface = enp5s0
+interval = 3.0
+
+label-connected = %{T3}%local_ip%%{T-}
+label-disconnected = not connected
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume>  <label-volume>
+label-muted = 
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+
+[module/current-song]
+type = custom/script
+exec = $HOME/bin/spotify.sh
+interval = 0.5
+
+[module/hostname]
+type = custom/script
+exec = hostname
+interval = 90
+
+; vim:ft=dosini
