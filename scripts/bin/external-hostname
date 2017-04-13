@@ -1,3 +1,2 @@
 #!/bin/sh
 curl -s https://wtfismyip.com/json | jq -r ".YourFuckingHostname"
-echo "running" >> /tmp/test

@@ -96,7 +96,7 @@ interval = 0.5
 
 [module/hostname]
 type = custom/script
-exec = hostname
+exec = external-hostname
 interval = 90
 
 ; vim:ft=dosini
