@@ -1,0 +1,5 @@
+#!/bin/sh
+for i in {0..2}; do
+  echo $i
+  nitrogen --set-tiled --head="$i" --random "$HOME/Pictures/wallpapers/random"
+done

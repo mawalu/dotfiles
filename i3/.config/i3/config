@@ -141,7 +141,7 @@ exec --no-startup-id compton -b
 exec polybar top
 
 # load wallpaper
-exec --no-startup-id nitrogen --restore
+exec --no-startup-id random-wallpaper
 
 # assign application to workspaces
 assign [class="(?i)Firefox"] 3
