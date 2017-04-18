@@ -91,12 +91,12 @@ ramp-volume-3 = 
 
 [module/current-song]
 type = custom/script
-exec = $HOME/bin/spotify.sh
+exec = ~/bin/spotify.sh
 interval = 0.5
 
 [module/hostname]
 type = custom/script
-exec = external-hostname
+exec = ~/bin/external-hostname
 interval = 90
 
 ; vim:ft=dosini
