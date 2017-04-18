@@ -11,7 +11,14 @@ alias tinker='php artisan tinker'
 alias art='php artisan'
 alias p='clear && phpunit'
 
+# fixes
+alias fixgpg='killall gpg-agent && sudo systemctl restart pcscd && source ~/.zshrc'
+
+# lights & automation
+alias codemode='hue-scene blue && radio "http://listen.hardbase.fm/aacplus.pls"'
+
 # other
 alias tailf='tail -f'
 alias twitter='turses'
 alias qr='qrencode -o - -t asciii'
+

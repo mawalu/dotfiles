@@ -40,5 +40,14 @@ function extract () {
 }
 
 function yt() {
-   youtube-dl -q -o - "$1" | mpv -
+ youtube-dl -q -o - "$1" | mpv -
 }
+
+function radio() {
+  nohup cvlc "$1" >/dev/null 2>&1 &
+}
+
+function hue-scene () {
+  cat ~/.hue/$1.json | hue lights 1,2,3 state > /dev/null
+}
+
