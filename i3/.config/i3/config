@@ -17,7 +17,7 @@ gaps outer 0
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec --no-startup-id urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -108,7 +108,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # reload wallpapers
-bindsym $mod+Shift+w exec ~/bin/random-wallpaper
+bindsym $mod+Shift+w exec --no-startup-id ~/bin/random-wallpaper
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -140,10 +140,13 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id compton -b
 
 # start polybar
-exec polybar top
+exec --no-startup-id polybar top
 
 # load wallpaper
-exec $HOME/bin/random-wallpaper
+exec --no-startup-id $HOME/bin/random-wallpaper
+
+# load additonal keybindings
+exec --no-startup-id xbindkeys
 
 # assign application to workspaces
 assign [class="(?i)Firefox"] 3
@@ -166,4 +169,4 @@ workspace 7 output DVI-D-0
 workspace 6 output DP-1
 
 # set workspace layouts
-exec_always ~/bin/per-workspace-layout.pl
+exec_always --no-startup-id ~/bin/per-workspace-layout.pl
