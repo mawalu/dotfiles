@@ -150,10 +150,11 @@ exec --no-startup-id xbindkeys
 
 # assign application to workspaces
 assign [class="(?i)Firefox"] 3
-assign [class="(?i)Tor Browser"] 4
+assign [class="(?i)Tor Browser"] 3
 assign [class="(?i)Thunderbird"] 5
 assign [class="(?i)Keepass"] 5
 assign [class="(?i)phpstorm"] 1
+assign [class="(?i)mpv"] 1
 # workaround for spotify
 for_window [class="(?i)Spotify"] move to workspace 7
 # tor browser floating
@@ -166,7 +167,6 @@ workspace 3 output DP-1
 workspace 4 output DVI-I-1
 workspace 5 output DVI-I-1
 workspace 7 output DVI-D-0
-workspace 6 output DP-1
 
 # set workspace layouts
 exec_always --no-startup-id ~/bin/per-workspace-layout.pl
