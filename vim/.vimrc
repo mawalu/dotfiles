@@ -21,8 +21,6 @@ set noswapfile
 set encoding=utf-8
 set fileencoding=utf-8
 
-" color scheme
-"set background=dark
 let g:hybrid_use_Xresources = 1
 colorscheme hybrid
 
@@ -43,7 +41,7 @@ cmap w!! w !sudo tee > /dev/null %
 call plug#begin('~/.plugged')
 
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'Valloric/YouCompleteMe'
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 
 call plug#end()
 
