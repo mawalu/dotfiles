@@ -13,6 +13,17 @@ set smarttab
 set expandtab
 set nowrap
 
+set showcmd
+set autowrite
+set clipboard=unnamed     " access your system clipboard
+set hlsearch
+
+"" Ctrl Left/h & Right/l cycle between buffers
+noremap <silent> <C-left> :bprev<CR>
+noremap <silent> <C-h> :bprev<CR>
+noremap <silent> <C-right> :bnext<CR>
+noremap <silent> <C-l> :bnext<CR>
+
 " disable backup and swap files
 set nobackup
 set noswapfile
@@ -20,9 +31,6 @@ set noswapfile
 " encodig
 set encoding=utf-8
 set fileencoding=utf-8
-
-let g:hybrid_use_Xresources = 1
-colorscheme hybrid
 
 " disable arrow keys
 map <up> <nop>
@@ -42,6 +50,9 @@ call plug#begin('~/.plugged')
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+Plug 'dylanaraps/wal.vim'
 
 call plug#end()
+
+colorscheme wal
 

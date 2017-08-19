@@ -16,3 +16,8 @@ if [[ -a ~/.use-yubikey ]]; then
 	source ~/.zsh/yubikey.zsh
 fi
 
+# allow local modifications
+if [[ -a ~/.zshrc-local ]]; then
+	source ~/.zshrc-local
+fi
+

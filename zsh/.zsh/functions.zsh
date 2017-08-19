@@ -7,7 +7,7 @@ function gui() {
 }
 
 function open() {
-  xdg-open $@
+  gui xdg-open $@
 }
 
 function sha-hash() {

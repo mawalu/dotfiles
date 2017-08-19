@@ -13,6 +13,16 @@ for_window [class="^.*"] border pixel 1
 gaps inner 30
 gaps outer 0
 
+# colors
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -154,7 +164,7 @@ assign [class="(?i)Tor Browser"] 2
 assign [class="(?i)Thunderbird"] 5
 assign [class="(?i)Keepass"] 5
 assign [class="(?i)phpstorm"] 1
-assign [class="(?i)mpv"] 1
+assign [class="(?i)mpv"] 3
 # workaround for spotify
 for_window [class="(?i)Spotify"] move to workspace 7
 # tor browser floating
