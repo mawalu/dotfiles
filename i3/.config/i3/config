@@ -13,16 +13,6 @@ for_window [class="^.*"] border pixel 1
 gaps inner 30
 gaps outer 0
 
-# colors
-# class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $bg     $bg     $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
-
-client.background       $bg
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -46,12 +36,6 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-
-# move focused window
-#bindsym $mod+Shift+j move left
-#bindsym $mod+Shift+k move down
-#bindsym $mod+Shift+l move up
-#bindsym $mod+Shift+odiaeresis move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -159,16 +143,12 @@ exec --no-startup-id $HOME/bin/random-wallpaper
 exec --no-startup-id xbindkeys
 
 # assign application to workspaces
-assign [class="(?i)Firefox"] 2
-assign [class="(?i)Tor Browser"] 2
 assign [class="(?i)Thunderbird"] 5
 assign [class="(?i)Keepass"] 5
 assign [class="(?i)phpstorm"] 1
 assign [class="(?i)mpv"] 3
 # workaround for spotify
 for_window [class="(?i)Spotify"] move to workspace 7
-# tor browser floating
-for_window [class="(?i)Tor Browser"] floating enable
 
 # assign workspaces to correct screen
 workspace 1 output DVI-I-1

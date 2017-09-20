@@ -1,5 +1,9 @@
 syntax on
 filetype plugin indent on
+filetype plugin on
+
+autocmd FileType markdown set wrap
+autocmd FileType markdown set linebreak
 
 set nocompatible
 set history=500
@@ -51,8 +55,12 @@ call plug#begin('~/.plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 Plug 'dylanaraps/wal.vim'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 
 colorscheme wal
+
+let g:vim_markdown_folding_disabled = 1
 
