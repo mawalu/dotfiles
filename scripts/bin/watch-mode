@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo ""
+
+i3subscribe mode | while read -r event; do
+  mode=$(echo $event | cut -c 6-)
+
+  if [ "$mode" == "default" ]; then
+    echo ""
+  else 
+    echo "$mode"
+  fi
+
+done
+
