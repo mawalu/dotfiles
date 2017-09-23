@@ -72,7 +72,7 @@ bar-used-empty-foreground = #444444
 
 [module/wired-network]
 type = internal/network
-interface = enp5s0
+interface = ${env:WNETWORK:enp5s0}
 interval = 3.0
 
 label-connected = %{T3}%local_ip%%{T-}

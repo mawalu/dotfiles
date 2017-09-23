@@ -1,0 +1,15 @@
+# gaps
+gaps inner 30
+gaps outer 0
+
+# assign workspaces to correct screen
+workspace 1 output DVI-I-1
+workspace 2 output DVI-D-0
+workspace 3 output DP-1
+workspace 4 output DVI-I-1
+workspace 5 output DVI-I-1
+workspace 7 output DVI-D-0
+
+# start polybar
+exec --no-startup-id polybar top
+
