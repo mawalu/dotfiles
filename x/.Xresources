@@ -31,10 +31,10 @@ URxvt*scrollWithBuffer:  true
 URxvt*scrollTtyKeypress: true
 
 ! URxvt terminal settings
-URxvt.font:                xft:Iosevka:pixelsize=14
-URxvt.boldFont:            xft:Iosevka:pixelsize=14:bold
-URxvt.italicFont:          xft:Iosevka:pixelsize=14:italic
-URxvt.boldItalicFont:      xft:Iosevka:pixelsize=14:bold:italic
+URxvt.font:                xft:Iosevka:pixelsize=16
+URxvt.boldFont:            xft:Iosevka:pixelsize=16:bold
+URxvt.italicFont:          xft:Iosevka:pixelsize=16:italic
+URxvt.boldItalicFont:      xft:Iosevka:pixelsize=16:bold:italic
 URxvt.letterSpace: 1
 
 !! Disable the stupid ctrl+shift 'feature'

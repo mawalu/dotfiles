@@ -12,7 +12,7 @@ alias art='php artisan'
 alias p='clear && phpunit'
 
 # fixes
-alias fixgpg='killall gpg-agent && sudo systemctl restart pcscd && source ~/.zshrc'
+alias fixgpg='killall gpg-agent && sudo systemctl restart pcscd && source ~/.zshrc && echo UPDATESTARTUPTTY | gpg-connect-agent'
 
 # lights & automation
 alias codemode='hue-scene blue && radio "http://listen.hardbase.fm/aacplus.pls"'
