@@ -22,3 +22,4 @@ alias tailf='tail -f'
 alias twitter='turses'
 alias qr='qrencode -o - -t asciii'
 
+alias ipi="curl wtfismyip.com/json"
