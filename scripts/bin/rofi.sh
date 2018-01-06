@@ -1,2 +1,7 @@
 #!/bin/sh
-rofi -combi-modi drun,ssh -monitor DVI-I-1 -show combi -modi combi 
+if [[ -a ~/.is-laptop ]]; then
+  rofi -combi-modi drun -show combi -modi combi
+else
+  rofi -combi-modi drun -monitor DVI-I-1 -show combi -modi combi
+fi
+

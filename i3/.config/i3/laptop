@@ -1,0 +1,3 @@
+# start polybar
+exec --no-startup-id MONITOR=eDP-1 WNETWORK=enp0s31f6 polybar top
+
