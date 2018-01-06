@@ -9,6 +9,7 @@ function get_command {
 }
 
 function launch {
+  echo $@
   ($@ &) &>/dev/null
 }
 

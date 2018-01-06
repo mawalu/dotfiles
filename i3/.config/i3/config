@@ -132,6 +132,11 @@ bindsym $mod+r mode "resize"
 
 mode "launch" {
         bindsym s exec --no-startup-id ~/bin/launch-desktop spotify
+        bindsym f exec --no-startup-id ~/bin/launch-desktop firefox
+        bindsym Shift+f exec --no-startup-id ~/bin/launch-desktop firefox_trusted
+        bindsym t exec --no-startup-id ~/bin/launch-desktop thunderbird
+        bindsym k exec --no-startup-id ~/bin/launch-desktop keepass
+        bindsym p exec --no-startup-id ~/bin/launch-desktop jetbrains-phpstorm
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
