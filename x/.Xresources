@@ -15,9 +15,6 @@ Xft.hintstyle:          hintsfull
 !-----------------------------------------------------------------------
 
 URxvt.internalBorder:    30
-!URxvt.externalBorder:    15
-!URxvt.lineSpace:        0
-!urxvt*shading:          30
 URxvt.depth:             32
 URxvt.saveLines:         10000
 URxvt*geometry:          96x30
@@ -31,21 +28,62 @@ URxvt*scrollWithBuffer:  true
 URxvt*scrollTtyKeypress: true
 
 ! URxvt terminal settings
-URxvt.font:                xft:Iosevka:pixelsize=16
-URxvt.boldFont:            xft:Iosevka:pixelsize=16:bold
-URxvt.italicFont:          xft:Iosevka:pixelsize=16:italic
-URxvt.boldItalicFont:      xft:Iosevka:pixelsize=16:bold:italic
-URxvt.letterSpace: 1
+URxvt.font:                xft:xos4 Terminess Powerline:pixelsize=15
+URxvt.boldFont:            xft:xos4 Terminess Powerline:pixelsize=15
+URxvt.italicFont:          xft:xos4 Terminess Powerline:pixelsize=15:italic
+URxvt.boldItalicFont:      xft:xos4 Terminess Powerline:pixelsize=15:bold:italic
+!URxvt.letterSpace: 1
 
 !! Disable the stupid ctrl+shift 'feature'
 URxvt.iso14755:            false
 URxvt.iso14755_52:         false
-
-#include "/home/martin/.cache/wal/colors.Xresources" 
 
 ! yankable urls
 URxvt.perl-ext: default,url-select
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
+
+
+! Colors
+#define black       #2F2F2F
+#define gray        #FFFFFF
+#define red         #8BC6A8
+#define green       #8BC6A8
+#define yellow      #EAAEAE
+#define blue        #58698C
+#define magenta     #FFFFFF
+#define cyan        #579B78
+
+! Shades
+#define d_gray      #525C67
+#define white       #E0DEDE
+#define l_red       #8BC6A8
+#define l_green     #EFB885
+#define l_yellow    #8BC6A8
+#define l_blue      #6D8FA9
+#define l_magenta   #579B78
+#define l_cyan      #EFB885
+#define l_gray      #b1b6bc
+
+*.foreground:   white
+*.background:   black
+
+*.color0:       black
+*.color1:       red
+*.color2:       green
+*.color3:       yellow
+*.color4:       blue
+*.color5:       magenta
+*.color6:       cyan
+*.color7:       white
+
+*.color8:       d_gray
+*.color9:       l_red
+*.color10:      l_green
+*.color11:      l_yellow
+*.color12:      l_blue
+*.color13:      l_magenta
+*.color14:      l_cyan
+*.color15:      l_gray
 

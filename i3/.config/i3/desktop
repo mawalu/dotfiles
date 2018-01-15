@@ -1,6 +1,23 @@
 # gaps
 gaps inner 30
-gaps outer 0
+gaps outer 20
+
+# terminal borders
+for_window [class="URxvt"] border pixel 5
+
+# colors
+set_from_resource $fg i3wm.color7 #E0DEDE
+set_from_resource $bg i3wm.color0 #2F2F2F
+set_from_resource $dg i3wm.color8 #525C67
+
+# class                 border  backgr. text indicator child_border
+client.focused          $fg     $bg     $fg  $bg       $fg
+client.focused_inactive $fg     $bg     $fg  $bg       $fg
+client.unfocused        $dg     $bg     $fg  $bg       $dg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
 
 # assign workspaces to correct screen
 workspace 1 output DVI-I-1
