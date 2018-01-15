@@ -72,7 +72,9 @@ label-disconnected = not connected
 [module/volume]
 type = internal/volume
 
-format-volume = <ramp-volume>  <label-volume>
+format-volume = <label-volume>
+;format-volume = <ramp-volume>  <label-volume>
+
 label-muted = 
 
 ramp-volume-0 = 
