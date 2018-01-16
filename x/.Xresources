@@ -28,10 +28,10 @@ URxvt*scrollWithBuffer:  true
 URxvt*scrollTtyKeypress: true
 
 ! URxvt terminal settings
-URxvt.font:                xft:xos4 Terminess Powerline:pixelsize=15
-URxvt.boldFont:            xft:xos4 Terminess Powerline:pixelsize=15
-URxvt.italicFont:          xft:xos4 Terminess Powerline:pixelsize=15:italic
-URxvt.boldItalicFont:      xft:xos4 Terminess Powerline:pixelsize=15:bold:italic
+URxvt.font:                xft:xos4 Terminus:pixelsize=18
+URxvt.boldFont:            xft:xos4 Terminus:pixelsize=18
+URxvt.italicFont:          xft:xos4 Terminus:pixelsize=18:italic
+URxvt.boldItalicFont:      xft:xos4 Terminus:pixelsize=18:bold:italic
 !URxvt.letterSpace: 1
 
 !! Disable the stupid ctrl+shift 'feature'

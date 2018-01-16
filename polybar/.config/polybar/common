@@ -79,10 +79,10 @@ type = internal/volume
 format-volume = <ramp-volume> <label-volume>
 
 label-muted = M
-ramp-volume-0 = S 
-ramp-volume-1 = S
-ramp-volume-2 = S
-ramp-volume-3 = S
+ramp-volume-0 = V
+ramp-volume-1 = V
+ramp-volume-2 = V
+ramp-volume-3 = V
 
 ;label-muted = 
 ;ramp-volume-0 = 
