@@ -1,5 +1,6 @@
 # git
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias lh="git log -1 --format="%H" | setclip"
 
 # clipboard
 alias setclip='xclip -selection c'
