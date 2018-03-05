@@ -104,6 +104,13 @@ bindsym $mod+Shift+w exec --no-startup-id ~/bin/random-wallpaper
 # media control
 bindsym $mod+Control_L+h exec --no-startup-id pleyerctl next
 
+# Edit in vim
+bindsym $mod+Shift+o exec --no-startup-id ~/bin/editinvim.sh
+
+# Emoji picker
+bindsim $mod+u exec "python ~/bin/rofimoji.py"
+
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
