@@ -1,0 +1,11 @@
+[Unit]
+Description=Update boy dns
+
+[Service]
+Type=oneshot
+EnvironmentFile=/home/martin/.godaddy
+ExecStart=/home/martin/bin/godaddy_dns.sh
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target

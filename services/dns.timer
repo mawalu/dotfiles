@@ -1,0 +1,9 @@
+[Unit]
+Description=Update godaddy dns
+
+[Timer]
+OnBootSec=1min
+OnCalendar=minutely
+
+[Install]
+WantedBy=timers.target
