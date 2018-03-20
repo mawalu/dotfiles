@@ -5,6 +5,7 @@ gaps outer 50
 # terminal borders
 for_window [class="URxvt"] border pixel 5
 for_window [class="(?i)phpstorm"] border pixel 5
+for_window [class="(?i)feh"] border pixel 5
 #for_window [class="^.*"] border pixel 5
 
 
