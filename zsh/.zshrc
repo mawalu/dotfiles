@@ -14,7 +14,7 @@ source ~/.zsh/functions.zsh
 source ~/.zsh/binding.zsh
 
 # use gpg-agent for ssh
-if [[ -a ~/.use-yubikey ]]; then
+if [[ -a ~/.use-yubikey ]] && [[ -z "$SSH_CLIENT" ]]; then
 	source ~/.zsh/yubikey.zsh
 fi
 

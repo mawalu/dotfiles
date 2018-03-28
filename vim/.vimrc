@@ -57,10 +57,17 @@ Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 Plug 'dylanaraps/wal.vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'jamessan/vim-gnupg'
 
 call plug#end()
 
 colorscheme wal
 
 let g:vim_markdown_folding_disabled = 1
+
+" GPG config
+
+let g:GPGPreferSign=1
+let g:GPGPreferArmor=1
+let g:GPGDefaultRecipients=["martin@mawalabs.de"]
 
