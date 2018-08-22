@@ -49,6 +49,9 @@ imap <right> <nop>
 " save as root
 cmap w!! w !sudo tee > /dev/null %
 
+" save using ctrl+s
+map <C-s> :w<CR>
+
 " plugins
 call plug#begin('~/.plugged')
 
