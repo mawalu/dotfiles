@@ -1,6 +1,6 @@
 # vim: ft=cfg
 [global]
-    font = Source Sans Pro 13
+    font = Monospace 10
 
     # Allow a small subset of html markup in notifications and formats:
     #   <b>bold</b>
@@ -25,7 +25,7 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "%s\n%b"
 
     # Sort messages by urgency.
     sort = yes
@@ -46,7 +46,7 @@
     # Show age of message if message is older than show_age_threshold
     # seconds.
     # Set to -1 to disable.
-    show_age_threshold = 60
+    show_age_threshold = -1
 
     # Split notifications into multiple lines if they don't fit into
     # geometry.
@@ -68,11 +68,11 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x30-40+40"
+    geometry = "300x30-60+20"
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
-    shrink = no
+    shrink = yes
 
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
@@ -125,10 +125,10 @@
     separator_height = 2
 
     # Padding between text and separator.
-    padding = 8
+    padding = 15
 
     # Horizontal padding.
-    horizontal_padding = 8
+    horizontal_padding = 15
 
     # Define a color for the separator.
     # possible values are:
@@ -150,13 +150,14 @@
     browser = /usr/bin/firefox -new-tab
 
     # Align icons left/right/off
-    icon_position = left
+    icon_position = off
 
     # Paths to default icons.
     icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
 [frame]
-    width = 0
+    width = 5
+    color = "#707880"
 
 [shortcuts]
 
@@ -179,13 +180,13 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#f0f0f0"
-    foreground = "#2b3635"
+    background = "#1d1f21"
+    foreground = "#c5c8c6"
     timeout = 10
 
 [urgency_normal]
-    background = "#f0f0f0"
-    foreground = "#2b3635"
+    background = "#1d1f21"
+    foreground = "#c5c8c6"
     timeout = 10
 
 [urgency_critical]
