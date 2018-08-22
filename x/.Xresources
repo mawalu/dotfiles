@@ -28,10 +28,10 @@ URxvt*scrollWithBuffer:  true
 URxvt*scrollTtyKeypress: true
 
 ! URxvt terminal settings
-URxvt.font:                xft:xos4 Terminus:pixelsize=18
-URxvt.boldFont:            xft:xos4 Terminus:pixelsize=18
-URxvt.italicFont:          xft:xos4 Terminus:pixelsize=18:italic
-URxvt.boldItalicFont:      xft:xos4 Terminus:pixelsize=18:bold:italic
+URxvt.font:                xft:xos4 Terminus:pixelsize=15
+URxvt.boldFont:            xft:xos4 Terminus:pixelsize=15
+URxvt.italicFont:          xft:xos4 Terminus:pixelsize=15:italic
+URxvt.boldItalicFont:      xft:xos4 Terminus:pixelsize=15:bold:italic
 !URxvt.letterSpace: 1
 
 !! Disable the stupid ctrl+shift 'feature'
@@ -44,46 +44,40 @@ URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
 
+! special
+*.foreground:   #c5c8c6
+*.background:   #1d1f21
+*.cursorColor:  #c5c8c6
 
-! Colors
-#define black       #2F2F2F
-#define gray        #FFFFFF
-#define red         #8BC6A8
-#define green       #8BC6A8
-#define yellow      #EAAEAE
-#define blue        #58698C
-#define magenta     #FFFFFF
-#define cyan        #579B78
+! black
+*.color0:       #282a2e
+*.color8:       #373b41
 
-! Shades
-#define d_gray      #525C67
-#define white       #E0DEDE
-#define l_red       #8BC6A8
-#define l_green     #EFB885
-#define l_yellow    #8BC6A8
-#define l_blue      #6D8FA9
-#define l_magenta   #579B78
-#define l_cyan      #EFB885
-#define l_gray      #b1b6bc
+! red
+*.color1:       #a54242
+*.color9:       #cc6666
 
-*.foreground:   white
-*.background:   black
+! green
+*.color2:       #8c9440
+*.color10:      #b5bd68
 
-*.color0:       black
-*.color1:       red
-*.color2:       green
-*.color3:       yellow
-*.color4:       blue
-*.color5:       magenta
-*.color6:       cyan
-*.color7:       white
+! yellow
+*.color3:       #de935f
+*.color11:      #f0c674
 
-*.color8:       d_gray
-*.color9:       l_red
-*.color10:      l_green
-*.color11:      l_yellow
-*.color12:      l_blue
-*.color13:      l_magenta
-*.color14:      l_cyan
-*.color15:      l_gray
+! blue
+*.color4:       #5f819d
+*.color12:      #81a2be
+
+! magenta
+*.color5:       #85678f
+*.color13:      #b294bb
+
+! cyan
+*.color6:       #5e8d87
+*.color14:      #8abeb7
+
+! white
+*.color7:       #707880
+*.color15:      #c5c8c6
 
