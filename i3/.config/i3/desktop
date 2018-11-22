@@ -1,6 +1,6 @@
 # gaps
-gaps inner 30
-gaps outer 50
+gaps inner 20
+gaps outer 20
 
 # terminal borders
 for_window [class="URxvt"] border pixel 5

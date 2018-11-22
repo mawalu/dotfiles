@@ -1,0 +1,10 @@
+[Unit]
+Description=Run restic backups
+After=network.service
+
+[Service]
+Type=oneshot
+ExecStart=/home/martin/bin/backup
+
+[Install]
+WantedBy=default.target
