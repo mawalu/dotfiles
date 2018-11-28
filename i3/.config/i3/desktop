@@ -2,13 +2,6 @@
 gaps inner 20
 gaps outer 20
 
-# terminal borders
-for_window [class="URxvt"] border pixel 5
-for_window [class="(?i)phpstorm"] border pixel 5
-for_window [class="(?i)feh"] border pixel 5
-#for_window [class="^.*"] border pixel 5
-
-
 # colors
 set_from_resource $fg i3wm.color7 #E0DEDE
 set_from_resource $bg i3wm.color0 #2F2F2F
