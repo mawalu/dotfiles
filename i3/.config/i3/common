@@ -152,15 +152,16 @@ mode "launch" {
 
 bindsym $mod+Shift+l mode "launch"
 
-
 # start compton
 exec --no-startup-id compton -b
+
+# start dunst
+exec --no-startup-id dunst
 
 # assign application to workspaces
 assign [class="(?i)Thunderbird"] 5
 assign [class="(?i)Keepass"] 5
 assign [class="(?i)phpstorm"] 1
-assign [class="(?i)mpv"] 3
 # workaround for spotify
 for_window [class="(?i)Spotify"] move to workspace 7
 
