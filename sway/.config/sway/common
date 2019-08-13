@@ -4,8 +4,6 @@
 
 set $mod Mod4
 
-for_window [class="^.*"] border pixel 0
-
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 8
@@ -90,8 +88,6 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# lock the screen using i3-lock
-bindsym $mod+Shift+d exec ~/bin/lock
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -106,10 +102,6 @@ bindsym $mod+Control_L+h exec --no-startup-id pleyerctl next
 
 # Edit in vim
 bindsym $mod+Shift+o exec --no-startup-id ~/bin/editinvim.sh
-
-# Emoji picker
-bindsim $mod+u exec "python ~/bin/rofimoji.py"
-
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -137,32 +129,25 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-mode "launch" {
-        bindsym s exec --no-startup-id ~/bin/launch-desktop spotify
-        bindsym f exec --no-startup-id ~/bin/launch-desktop firefox
-        bindsym Shift+f exec --no-startup-id ~/bin/launch-desktop firefox_trusted
-        bindsym t exec --no-startup-id ~/bin/launch-desktop thunderbird
-        bindsym k exec --no-startup-id ~/bin/launch-desktop keepass
-        bindsym p exec --no-startup-id ~/bin/launch-desktop jetbrains-phpstorm
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-bindsym $mod+Shift+l mode "launch"
-
-
-# start compton
-exec --no-startup-id compton -b
+# start dunst
+exec --no-startup-id dunst
 
 # assign application to workspaces
 assign [class="(?i)Thunderbird"] 5
 assign [class="(?i)Keepass"] 5
 assign [class="(?i)phpstorm"] 1
-assign [class="(?i)mpv"] 3
 # workaround for spotify
 for_window [class="(?i)Spotify"] move to workspace 7
 
-# set workspace layouts
-exec_always --no-startup-id ~/bin/per-workspace-layout.pl
+exec waybar
+exec redshift -l 49:82
+
+exec swayidle -w \
+  timeout 5 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
+  resume 'swaymsg "output * dpms on"'
+
+bindsym $mod+Shift+d exec "swaylock -n"
+
+input * xkb_layout "de"
+input * xkb_options caps:swapescape
+
