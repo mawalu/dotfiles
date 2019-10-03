@@ -1,0 +1,17 @@
+#!/bin/sh
+source ~/.restic
+
+function run_restic {
+  restic --repo "$REPOSITORY" $@
+}
+
+sleep 20
+
+if run_restic backup $FILES $RESTIC_ARGS; then
+  message="Backup on $(hostnamectl --static) completed"
+else
+  message="Backup on $(hostnamectl --static) failed"
+fi
+
+hostname="$(hostnamectl --static)"
+curl "https://$REPORT_HOST/report/backup/$hostname?status=$message&token=$REPORT_TOKEN"
