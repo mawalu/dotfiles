@@ -57,15 +57,12 @@ call plug#begin('~/.plugged')
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
-Plug 'dylanaraps/wal.vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'jamessan/vim-gnupg'
 Plug 'townk/vim-autoclose'
 
 call plug#end()
-
-colorscheme wal
 
 let g:vim_markdown_folding_disabled = 1
 
