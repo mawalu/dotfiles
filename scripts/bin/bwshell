@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+#
+# Another way to build on this example is to remove --share-net to disable
+# networking.
+set -euo pipefail
+
+name="$1"
+
+sandbox_path="/home/martin/.sandboxes/$name"
+mkdir -p "$sandbox_path"
+
+(exec bwrap --ro-bind /usr /usr \
+      --bind $sandbox_path /home/martin \
+      --bind $(pwd) $(pwd) \
+      --dir /tmp \
+      --dir /var \
+      --symlink ../tmp var/tmp \
+      --proc /proc \
+      --dev /dev \
+      --ro-bind /etc/ca-certificates /etc/ca-certificates \
+      --ro-bind /etc/ssl /etc/ssl \
+      --ro-bind /etc/resolv.conf /etc/resolv.conf \
+      --symlink usr/lib /lib \
+      --symlink usr/lib64 /lib64 \
+      --symlink usr/bin /bin \
+      --symlink usr/sbin /sbin \
+      --unshare-all \
+      --share-net \
+      --die-with-parent \
+      --dir /run/user/$(id -u) \
+      --setenv XDG_RUNTIME_DIR "/run/user/`id -u`" \
+      --setenv PS1 "$name$ " \
+      --hostname "$name" \
+      --file 11 /etc/passwd \
+      --file 12 /etc/group \
+      --chdir $(pwd) \
+      /bin/bash) \
+    11< <(getent passwd $UID 65534) \
+    12< <(getent group $(id -g) 65534)

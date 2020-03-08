@@ -12,6 +12,8 @@ source ~/.zsh/variables.zsh
 source ~/.zsh/aliases.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/binding.zsh
+source ~/.zsh/screen.zsh
+
 
 # use gpg-agent for ssh
 if [[ -a ~/.use-yubikey ]] && [[ -z "$SSH_CLIENT" ]]; then
@@ -24,4 +26,3 @@ if [[ -a ~/.zshrc-local ]]; then
 fi
 
 stty -ixon
-

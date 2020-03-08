@@ -129,8 +129,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# start dunst
-exec --no-startup-id dunst
+# start mako
+exec mako
 
 # assign application to workspaces
 assign [class="(?i)Thunderbird"] 5
@@ -148,6 +148,6 @@ exec swayidle -w \
 
 bindsym $mod+Shift+d exec "swaylock -n"
 
-input * xkb_layout "de"
+input * xkb_layout "us"
 input * xkb_options caps:swapescape
 

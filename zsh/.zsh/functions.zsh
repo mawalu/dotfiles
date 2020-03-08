@@ -39,10 +39,6 @@ function extract () {
     fi  
 }
 
-function yt() {
- youtube-dl -q -o - "$1" | mpv -
-}
-
 function radio() {
   nohup cvlc "$1" >/dev/null 2>&1 &
 }

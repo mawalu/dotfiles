@@ -2,7 +2,7 @@
 source ~/.restic
 
 function run_restic {
-  restic --repo "$REPOSITORY" $@
+  sudo restic --repo "$REPOSITORY" $@
 }
 
 sleep 20

@@ -2,10 +2,6 @@
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias lh="git log -1 --format="%H" | setclip"
 
-# clipboard
-alias setclip='xclip -selection c'
-alias getclip='xclip -selection clipboard -o'
-
 # php development
 alias phpunit='./vendor/bin/phpunit'
 alias tinker='php artisan tinker'
@@ -25,4 +21,6 @@ alias qr='qrencode -o - -t asciii'
 
 alias ipi="curl https://wtfismyip.com/json"
 
+# containers
 alias holup='podman run --rm -it -v $(pwd):/world -w /world --hostname=workbox workbox zsh'
+alias kali='podman run --rm -it -v $(pwd):/world -w /world --hostname=kali kali zsh'
