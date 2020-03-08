@@ -51,7 +51,7 @@
         "format-icons": {
             "default": ["", ""]
         },
-        "scroll-step": 10,
+        "scroll-step": 1,
         "on-click": "pavucontrol",
         "tooltip": false
     },
@@ -66,8 +66,8 @@
         "format": "{percent}%  {icon}",
         "format-alt-click": "click-right",
         "format-icons": [""],
-        "on-scroll-down": "light -A 1",
-        "on-scroll-up": "light -U 1"
+        "on-scroll-down": "light -U 1",
+        "on-scroll-up": "light -A 1"
     },
     "tray": {
         "icon-size": 18
