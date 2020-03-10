@@ -1,17 +1,34 @@
 #!/usr/bin/env bash
-#
-# Another way to build on this example is to remove --share-net to disable
-# networking.
+
+# Future ideas
+#  * Remove --share-net and switch to slirp4netns (doesn't work with --dev, see bubblewrap#332)
+
 set -euo pipefail
 
-name="$1"
+cli="$(basename $0)"
 
-sandbox_path="/home/martin/.sandboxes/$name"
+if [[ "$#" -eq 0 ]]; then
+  echo "Usage: $cli <sandbox> [command]"
+  exit 1
+fi
+
+name="$1"
+run_command="${2:-/bin/bash}"
+run_chdir="$HOME"
+sandbox_path="$HOME/.sandboxes/$name"
+
 mkdir -p "$sandbox_path"
+
+if [[ "$cli" == "bwshell" ]]; then
+  mount_pwd=1
+  run_chdir="$(pwd)"
+fi
+
+[[ "$cli" == "bwbox" && "$#" -eq 1 ]] && run_command="$name"
 
 (exec bwrap --ro-bind /usr /usr \
       --bind $sandbox_path /home/martin \
-      --bind $(pwd) $(pwd) \
+      ${mount_pwd:+--bind $(pwd) $(pwd)} \
       --dir /tmp \
       --dir /var \
       --symlink ../tmp var/tmp \
@@ -33,7 +50,7 @@ mkdir -p "$sandbox_path"
       --hostname "$name" \
       --file 11 /etc/passwd \
       --file 12 /etc/group \
-      --chdir $(pwd) \
-      /bin/bash) \
+      --chdir "$run_chdir" \
+      "$run_command") \
     11< <(getent passwd $UID 65534) \
     12< <(getent group $(id -g) 65534)
