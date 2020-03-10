@@ -60,12 +60,10 @@ function enable_dock() {
 
   gaps 20 20
   alacritty_config docked
-  set_wallpaper "water.jpg"
 }
 
 function disable_dock() {
   enable_screen
   gaps 0 0
   alacritty_config mobile
-  set_wallpaper "makepkg_not_war.png"
 }

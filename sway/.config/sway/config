@@ -119,9 +119,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# start mako
+# notifications
 exec mako
-
 bindsym Ctrl+Space exec "makoctl dismiss"
 
 # assign application to workspaces
@@ -134,6 +133,7 @@ for_window [class="(?i)Spotify"] move to workspace 7
 
 exec waybar
 exec redshift -l 49:82
+exec kanshi
 
 exec swayidle -w \
   timeout 5 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
@@ -144,10 +144,10 @@ bindsym $mod+Shift+d exec "swaylock -n"
 input * xkb_layout "eu"
 input * xkb_options caps:swapescape
 
-for_window [class="^.*"] border pixel 1
+default_border pixel 2
 
 # load wallpaper
-output "*" background /home/martin/pictures/wallpapers/makepkg_not_war.png fill
+output "*" background $HOME/pictures/wallpapers/mountains.jpg fill
 
 # hide cursor if not used
 seat * hide_cursor 8000

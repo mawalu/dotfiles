@@ -171,6 +171,7 @@ colors:
   #
   indexed_colors: []
 
+
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once
@@ -198,7 +199,7 @@ visual_bell:
   duration: 0
 
 # Background opacity
-background_opacity: 0.9
+background_opacity: 1.0
 
 # Mouse bindings
 #
