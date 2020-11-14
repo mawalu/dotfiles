@@ -2,10 +2,9 @@
     "layer": "bottom",
     "position": "top",
     "height": 30,
-
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["tray", "custom/spotify", "backlight", "pulseaudio", "battery", "clock"],
+    "modules-right": ["tray", "backlight", "pulseaudio", "battery", "clock"],
     "sway/mode": {
         "format": " {}"
     },

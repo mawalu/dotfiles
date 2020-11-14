@@ -12,15 +12,19 @@ alias p='clear && phpunit'
 alias fixgpg='echo UPDATESTARTUPTTY | gpg-connect-agent'
 
 # lights & automation
-alias codemode='hue-scene blue && radio "http://listen.hardbase.fm/aacplus.pls"'
+alias chill='mpv "ytdl://ytsearch:lowfi hip hop chill study" --vid=no'
+alias hardbase='mpv https://listen.hardbase.fm/aacplus.pls'
 
 # other
 alias tailf='tail -f'
 alias twitter='turses'
 alias qr='qrencode -o - -t asciii'
-
-alias ipi="curl https://wtfismyip.com/json"
+alias ipi='curl https://wtfismyip.com/json'
+alias scp='sftp'
 
 # containers
 alias holup='podman run --rm -it -v $(pwd):/world -w /world --hostname=workbox workbox zsh'
 alias kali='podman run --rm -it -v $(pwd):/world -w /world --hostname=kali kali zsh'
+
+# suffix aliases
+alias -s git="git clone"

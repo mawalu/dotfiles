@@ -1,7 +1,7 @@
 # oh-my-zsh
 ZSH_THEME="gianu"
 ZSH=$HOME/.oh-my-zsh
-plugins=(git archlinux npm node jsontools sudo vagrant wd urltools tmuxinator vi-mode)
+plugins=(git archlinux npm node jsontools sudo vagrant wd urltools tmuxinator vi-mode z)
 source $ZSH/oh-my-zsh.sh
 
 # general shell config

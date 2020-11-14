@@ -131,13 +131,16 @@ assign [class="(?i)phpstorm"] 1
 # workaround for spotify
 for_window [class="(?i)Spotify"] move to workspace 7
 
+for_window [app_id="lxqt-policykit-agent"] floating enable
+
 exec waybar
 exec redshift -l 49:82
 exec kanshi
+exec lxqt-policykit-agent
 
-exec swayidle -w \
-  timeout 5 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
-  resume 'swaymsg "output * dpms on"'
+#exec swayidle -w \
+#  timeout 5 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
+#  resume 'swaymsg "output * dpms on"'
 
 bindsym $mod+Shift+d exec "swaylock -n"
 
@@ -147,7 +150,7 @@ input * xkb_options caps:swapescape
 default_border pixel 2
 
 # load wallpaper
-output "*" background $HOME/pictures/wallpapers/mountains.jpg fill
+output "*" background $HOME/media/pictures/wallpapers/random/2.jpg fill
 
 # hide cursor if not used
 seat * hide_cursor 8000

@@ -1,7 +1,16 @@
 #!/usr/bin/env bash
 
+# Security problems
+#  * Check if entire /sys & /dev are required
+#  * /var/tmp
+
 # Future ideas
 #  * Remove --share-net and switch to slirp4netns (doesn't work with --dev, see bubblewrap#332)
+
+# Additonal mounts (should be configurable)
+#  * vim
+#  * git
+#  * gdb
 
 set -euo pipefail
 
@@ -13,44 +22,57 @@ if [[ "$#" -eq 0 ]]; then
 fi
 
 name="$1"
-run_command="${2:-/bin/bash}"
+run_command="${2:-/bin/zsh}"
 run_chdir="$HOME"
-sandbox_path="$HOME/.sandboxes/$name"
 
-mkdir -p "$sandbox_path"
+sandbox_path="$HOME/.sandboxes/$name"
+sandbox_files="$sandbox_path/files"
+sandbox_info="$sandbox_path/info"
+
+mkdir -p "$sandbox_files"
 
 if [[ "$cli" == "bwshell" ]]; then
-  mount_pwd=1
+  cli_mode=1
   run_chdir="$(pwd)"
+else
+  gui_mode=1
 fi
 
 [[ "$cli" == "bwbox" && "$#" -eq 1 ]] && run_command="$name"
 
-(exec bwrap --ro-bind /usr /usr \
-      --bind $sandbox_path /home/martin \
-      ${mount_pwd:+--bind $(pwd) $(pwd)} \
+#--ro-bind $HOME/.ssh/config $HOME/.ssh/config \
+
+(exec bwrap --bind $sandbox_files $HOME \
+      ${cli_mode:+--bind $(pwd) $(pwd)} \
+      ${cli_mode:+--bind $SSH_AUTH_SOCK $SSH_AUTH_SOCK} \
+      ${gui_mode:+--bind /run/user/$(id -u)/pulse /run/user/$(id -u)/pulse} \
+      ${gui_mode:+--bind /run/user/$(id -u)/wayland-0 /run/user/$(id -u)/wayland-0} \
+      --bind /sys /sys \
+      --ro-bind /etc /etc \
+      --ro-bind /var /var \
+      --ro-bind /usr /usr \
+      --ro-bind /opt /opt \
+      --ro-bind $HOME/.zshrc $HOME/.zshrc \
+      --ro-bind $HOME/.zsh $HOME/.zsh \
+      --ro-bind $HOME/.oh-my-zsh $HOME/.oh-my-zsh \
+      --ro-bind $HOME/.ssh/known_hosts $HOME/.ssh/known_hosts \
+      --dev-bind /dev /dev \
       --dir /tmp \
-      --dir /var \
-      --symlink ../tmp var/tmp \
-      --proc /proc \
-      --dev /dev \
-      --ro-bind /etc/ca-certificates /etc/ca-certificates \
-      --ro-bind /etc/ssl /etc/ssl \
-      --ro-bind /etc/resolv.conf /etc/resolv.conf \
+      --dir $HOME/.ssh \
+      --dir /run/user/$(id -u) \
       --symlink usr/lib /lib \
       --symlink usr/lib64 /lib64 \
       --symlink usr/bin /bin \
       --symlink usr/sbin /sbin \
+      --proc /proc \
       --unshare-all \
       --share-net \
       --die-with-parent \
-      --dir /run/user/$(id -u) \
-      --setenv XDG_RUNTIME_DIR "/run/user/`id -u`" \
-      --setenv PS1 "$name$ " \
+      --setenv XDG_RUNTIME_DIR "/run/user/$(id -u)" \
       --hostname "$name" \
-      --file 11 /etc/passwd \
-      --file 12 /etc/group \
       --chdir "$run_chdir" \
+      --info-fd 11 \
       "$run_command") \
-    11< <(getent passwd $UID 65534) \
-    12< <(getent group $(id -g) 65534)
+      11> "$sandbox_info"
+
+rm "$sandbox_info"

@@ -5,8 +5,6 @@ function run_restic {
   sudo restic --repo "$REPOSITORY" $@
 }
 
-sleep 20
-
 if run_restic backup $FILES $RESTIC_ARGS; then
   message="Backup on $(hostnamectl --static) completed"
 else

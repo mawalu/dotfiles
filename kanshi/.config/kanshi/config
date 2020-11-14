@@ -1,16 +1,16 @@
-home {
+profile home {
   output eDP-1 disable
-  output "Dell Inc. DELL U2312HM 60DK218MBB9L" enable position 1920,0
-  output "Dell Inc. DELL U2312HM RJWPW358BURL" enable position 0,0
-  output "Dell Inc. DELL U2312HM RJWPW373DRYL" enable position 3840,0 transform 90
-  exec swaymsg gaps outer all set 20, gaps outer 20, gaps inner all set 20, gaps inner 20
+  output "Dell Inc. DELL U2312HM 60DK218MBB9L" enable position 3840,0 transform 90
+  output "Dell Inc. DELL U2312HM RJWPW358BURL" enable position 1920,0
+  output "Dell Inc. DELL U2312HM RJWPW373DRYL" enable position 0,0
+  exec swaymsg gaps outer all set 5, gaps outer 5, gaps inner all set 5, gaps inner 5
   exec cp $HOME/.config/alacritty/docked $HOME/.config/alacritty/alacritty.yml
-  exec swaymsg "output * background $HOME/pictures/wallpapers/mountains.jpg fill"
+  exec swaymsg "output * background $HOME/media/pictures/wallpapers/random/2.jpg fill"
 }
 
-undocked {
+profile undocked {
   output eDP-1 enable 
   exec swaymsg gaps outer all set 0, gaps outer 0, gaps inner all set 0, gaps inner 0
   exec cp $HOME/.config/alacritty/mobile $HOME/.config/alacritty/alacritty.yml
-  exec swaymsg "output * background $HOME/pictures/wallpapers/mountains.jpg fill"
+  exec swaymsg "output * background $HOME/media/pictures/wallpapers/random/2.jpg fill"
 }
