@@ -1,17 +1,18 @@
 * {
     border:        none;
     border-radius: 0;
-    font-family:   'Source Code Pro', Sans;
-    font-size:     15px;
+    font-family:   'Source Code Pro';
+    font-size:     13px;
+    font-weight:   300;
     box-shadow:    none;
     text-shadow:   none;
     transition-duration: 0s;
 }
 
 window {
-    background: #002635;
-    color: #e6e6dc;
-    opacity: 0.9;
+    color:      #f8f8f2;
+    background: #282a36;
+    opacity: 0.7;
 }
 
 #workspaces {
@@ -20,7 +21,7 @@ window {
 
 #workspaces button {
     padding:    0 5px;
-    color:      rgba(217, 216, 216, 0.4);
+    color:      rgba(217, 216, 216, 1);
 }
 
 #workspaces button.visible {

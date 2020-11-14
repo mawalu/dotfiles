@@ -1,7 +1,7 @@
 # oh-my-zsh
 ZSH_THEME="gianu"
 ZSH=$HOME/.oh-my-zsh
-plugins=(git archlinux npm node jsontools sudo vagrant wd urltools tmuxinator vi-mode)
+plugins=(git archlinux npm node jsontools sudo vagrant wd urltools tmuxinator vi-mode z)
 source $ZSH/oh-my-zsh.sh
 
 # general shell config
@@ -12,6 +12,8 @@ source ~/.zsh/variables.zsh
 source ~/.zsh/aliases.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/binding.zsh
+source ~/.zsh/screen.zsh
+
 
 # use gpg-agent for ssh
 if [[ -a ~/.use-yubikey ]] && [[ -z "$SSH_CLIENT" ]]; then
@@ -24,4 +26,3 @@ if [[ -a ~/.zshrc-local ]]; then
 fi
 
 stty -ixon
-

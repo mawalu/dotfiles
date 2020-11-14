@@ -2,10 +2,8 @@
 source ~/.restic
 
 function run_restic {
-  restic --repo "$REPOSITORY" $@
+  sudo restic --repo "$REPOSITORY" $@
 }
-
-sleep 20
 
 if run_restic backup $FILES $RESTIC_ARGS; then
   message="Backup on $(hostnamectl --static) completed"

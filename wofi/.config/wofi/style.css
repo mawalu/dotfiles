@@ -1,0 +1,38 @@
+window {
+  font-family: Source Code Pro;
+  background: #282a36;
+  padding: 50px;
+  font-size: 13px;
+}
+
+#outer-box {
+  padding: 10px;
+  border: 5px solid #ffb86c;
+}
+
+#inner-box {
+  padding: 5px 0;
+}
+
+#input {
+  background: #44475a;
+  color: #f8f8f2;
+}
+
+#scroll {
+    border: 0;
+}
+
+#entry {
+  border: none;
+  border-radius: 3px;
+}
+
+#entry:selected {
+  background-color: #44475a;
+}
+
+#text {
+  color: #f8f8f2;
+  padding: 5px;
+}

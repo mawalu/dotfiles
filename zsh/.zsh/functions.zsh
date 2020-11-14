@@ -39,14 +39,6 @@ function extract () {
     fi  
 }
 
-function yt() {
- youtube-dl -q -o - "$1" | mpv -
-}
-
-function radio() {
-  nohup cvlc "$1" >/dev/null 2>&1 &
-}
-
 function hue-scene () {
   cat ~/.hue/$1.json | hue lights 1,2,3 state > /dev/null
 }
@@ -55,4 +47,8 @@ function price() {
   local pair="${1:-etheur}"
   local exchange="${2:-kraken}"
   curl -s "https://api.cryptowat.ch/markets/$exchange/$pair/price" | jq ".result.price"
+}
+
+function wttr() {
+  curl -s "https://wttr.in/$1"
 }

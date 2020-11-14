@@ -61,6 +61,8 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'jamessan/vim-gnupg'
 Plug 'townk/vim-autoclose'
+Plug 'scrooloose/nerdtree'
+Plug 'ap/vim-buftabline'
 
 call plug#end()
 
@@ -72,3 +74,6 @@ let g:GPGPreferSign=1
 let g:GPGPreferArmor=1
 let g:GPGDefaultRecipients=["martin@mawalabs.de"]
 
+" NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <C-n> :NERDTreeToggle<CR>

@@ -1,5 +1,0 @@
-#!/bin/sh
-for i in {0..2}; do
-  echo $i
-  nitrogen --set-zoom-fill --head="$i" --random "$HOME/media/pictures/wallpapers/random"
-done
