@@ -1,0 +1,28 @@
+#!/bin/bash
+tempfile=$(mktemp)
+youtube_dl_log=$(mktemp)
+
+youtube-dl -j "ytsearch10:$*" > $tempfile
+
+# workaround for lack of mapfile in bash < 4
+# https://stackoverflow.com/a/41475317/6598435
+while IFS= read -r line
+do
+    youtube_urls+=("$line")
+done < <(cat $tempfile | jq '.webpage_url' | tr -d '"' )
+# # for bash >= 4
+# mapfile -t youtube_urls < <(cat $tempfile | jq '.webpage_url' | tr -d '"' )
+
+cat $tempfile | jq '.fulltitle, .webpage_url'
+
+while :
+do
+    echo "Enter video number to download."
+    read i
+    # don't download anything if you just press enter
+    if [ ! x"$i" == x"" ]
+    then
+        # to make numbering of videos more intuitive (start from 1 not 0)
+        mpv ${youtube_urls[$i - 1]} &
+    fi
+done

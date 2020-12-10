@@ -144,6 +144,11 @@ exec lxqt-policykit-agent
 
 bindsym $mod+Shift+d exec "swaylock -n"
 
+# media keys
+bindsym $mod+p exec "playerctl play-pause"
+bindsym $mod+n exec "playerctl next"
+bindsym $mod+Shift+p exec "playerctl previous"
+
 input * xkb_layout "eu"
 input * xkb_options caps:swapescape
 
