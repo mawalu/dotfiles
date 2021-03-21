@@ -134,6 +134,7 @@ for_window [class="(?i)Spotify"] move to workspace 7
 
 for_window [app_id="lxqt-policykit-agent"] floating enable
 for_window [title="\ -\ Weitergabe-Indikator$"] floating enable, sticky enable
+for_window [title="\ -\ Browser Access Request$"] floating enable, sticky enable
 
 exec waybar
 exec redshift -l 49:82
