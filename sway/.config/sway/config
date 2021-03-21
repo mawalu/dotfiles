@@ -127,11 +127,13 @@ bindsym Ctrl+Space exec "makoctl dismiss"
 assign [class="(?i)Thunderbird"] 5
 assign [class="(?i)Keepass"] 5
 assign [class="(?i)phpstorm"] 1
+assign [class="(?i)pycharm"] 1
 
 # workaround for spotify
 for_window [class="(?i)Spotify"] move to workspace 7
 
 for_window [app_id="lxqt-policykit-agent"] floating enable
+for_window [title="\ -\ Weitergabe-Indikator$"] floating enable, sticky enable
 
 exec waybar
 exec redshift -l 49:82
@@ -145,9 +147,9 @@ exec lxqt-policykit-agent
 bindsym $mod+Shift+d exec "swaylock -n"
 
 # media keys
-bindsym $mod+p exec "playerctl play-pause"
-bindsym $mod+n exec "playerctl next"
-bindsym $mod+Shift+p exec "playerctl previous"
+bindsym $mod+p exec "playerctl -p spotify play-pause"
+bindsym $mod+n exec "playerctl -p spotify next"
+bindsym $mod+Shift+p exec "playerctl -p spotify previous"
 
 input * xkb_layout "eu"
 input * xkb_options caps:swapescape

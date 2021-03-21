@@ -59,7 +59,6 @@ fi
       --dev-bind /dev /dev \
       --dir /tmp \
       --dir $HOME/.ssh \
-      --dir /run/user/$(id -u) \
       --symlink usr/lib /lib \
       --symlink usr/lib64 /lib64 \
       --symlink usr/bin /bin \
