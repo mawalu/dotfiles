@@ -56,12 +56,11 @@ map <C-s> :w<CR>
 call plug#begin('~/.plugged')
 
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 Plug 'godlygeek/tabular'
+Plug 'LnL7/vim-nix'
 Plug 'plasticboy/vim-markdown'
 Plug 'jamessan/vim-gnupg'
 Plug 'townk/vim-autoclose'
-Plug 'scrooloose/nerdtree'
 Plug 'ap/vim-buftabline'
 
 call plug#end()

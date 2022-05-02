@@ -136,10 +136,7 @@ for_window [app_id="lxqt-policykit-agent"] floating enable
 for_window [title="\ -\ Weitergabe-Indikator$"] floating enable, sticky enable
 for_window [title="\ -\ Browser Access Request$"] floating enable, sticky enable
 
-exec waybar
-exec redshift -l 49:82
 exec kanshi
-exec lxqt-policykit-agent
 
 #exec swayidle -w \
 #  timeout 5 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
@@ -174,3 +171,5 @@ client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
 client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 client.background       #F8F8F2
+
+exec "systemctl --user import-environment; systemctl --user start sway-session.target"
