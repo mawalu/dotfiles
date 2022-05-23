@@ -1,0 +1,42 @@
+{
+  "nodes": {
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1649676176,
+        "narHash": "sha256-OWKJratjt2RW151VUlJPRALb7OU2S5s+f0vLj4o1bHM=",
+        "ref": "master",
+        "rev": "a4b154ebbdc88c8498a5c7b01589addc9e9cb678",
+        "revCount": 49,
+        "type": "git",
+        "url": "https://g.m5w.de/mawalu/flake-utils"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://g.m5w.de/mawalu/flake-utils"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1652261291,
+        "narHash": "sha256-ix8or/Evw+c9oinsqKsE3t/GXkz01Br0xv1ICS5Hrsw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "676e4d42d68a26b758e47981bd4b2df8da1cec94",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

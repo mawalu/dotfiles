@@ -52,3 +52,17 @@ function price() {
 function wttr() {
   curl -s "https://wttr.in/$1"
 }
+
+function devshell() {
+  local devshell_location="$HOME/.devshells"
+
+  if [ "$#" -ne 1 ]; then
+    echo "Usage devshell <name>"
+    return
+  fi
+
+  export DEVSHELL_OLDPWD="$(pwd)"
+  cd "$devshell_location"
+  nix develop ".#$1"
+  cd "$DEVSHELL_OLDPWD"
+}
