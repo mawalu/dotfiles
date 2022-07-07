@@ -11,11 +11,16 @@
         pkgs = nixpkgs.legacyPackages.${system};
         inputs = with pkgs; [
           nodejs nodePackages.npm nodePackages.yarn
-          git gnupg vim less openssh
+          git gnupg vim less openssh deno
         ];
         mkPhp = pkg: let php = pkg.buildEnv { 
-          extensions = { enabled, all }: enabled ++ [ all.imagick all.redis ]; 
-          extraConfig = "memory_limit = 2G";
+          extensions = { enabled, all }: enabled ++ [ all.imagick all.redis all.xdebug ]; 
+          extraConfig = ''
+            memory_limit = 2G
+            short_open_tag = Off
+            xdebug.mode=debug
+            xdebug.start_with_request=yes
+          '';
         }; in [ php php.packages.composer ];
         devShell = config: pkgs.mkShell ({
            shellHook = ''
